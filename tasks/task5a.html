@@ -1,0 +1,42 @@
+<!--Bygg en enkel webbsida med följande element:
+En rubrik
+En knapp
+En div-container
+
+När man klickar på knappen ska följande hända:
+Bakgrundsfärgen på div-containern ska ändras 
+till grön
+Texten i rubriken ska ändras till "Jag har 
+ändrats!"
+Hint: Använd document.querySelector, Element.style och oncl
+
+-->
+
+<html>
+<head>
+    <script>
+        function clickFunction() {
+            let ourText = document.querySelector("p");
+            let ourDiv = document.querySelector("#color-changer");
+
+            // Ändra bakrundsfärgen på ourDiv till grön
+            ourDiv.style.backgroundColor = "green";
+
+            // ändra text på ourText till "Jag har ändrats"
+            ourText.innerText = "Jag har ändrats";
+        }
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Här är en text!</p>
+    <button onclick="clickFunction()">Klick här</button>
+    <div id="color-changer"></div>
+</body>
+</html>

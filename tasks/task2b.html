@@ -1,0 +1,35 @@
+<!--Generera ett slumpmässigt tal mellan 1-10 och 
+spara i en variabel. Använd if/else för att skriva 
+ut om talet är jämnt eller udda.
+Hint: Använd Math-objectet och dess metod 
+Math.random()-->
+<html>
+        <script>
+
+            // Skapa en funktion som ger tillbaka ett slumpmässigt heltal
+            function getRandomInt(max) {
+                // Tar ett slumpmässigt tal mellan 0 och 1, gångrar med max
+                // Rundar siffran till ett heltal, nedåt.
+
+            return Math.floor(Math.random() * max);
+            }
+           
+           // Skapa ett slumpmässight tal med hjälp av math.random()
+            let randomNumber = getRandomInt(11);
+            console.log(randomNumber)
+
+            // skapa en if-sats som säger om talet är jämnt eller udda..
+            // om randomNumber modulus 2 inte lämnar något kvar, så är det jämt
+            if(randomNumber % 2 == 0){
+                console.log('Talet är jämnt!')
+            } else {
+                console.log('Talet är ojämnt!')
+                // Annars är det ett ojämnt tal!
+            }
+
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>

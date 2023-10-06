@@ -1,0 +1,35 @@
+<!--Skapa en funktion som tar en sträng och 
+returnerar strängen baklänges.
+Hint: Använd String.split() och en 
+for-loop..-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            // skapa en funktion som delar upp en sträng i varje tecken
+            function reverseString(orginalString) {
+                // Splitta strängen till respektive tecken och stoppa den i en array
+                let returnString = '';
+                let characters = orginalString.split('');
+
+
+                for(let i = characters.length-1; i >= 0; i--){
+                    returnString += characters[i];
+            }
+            return returnString;
+
+            }
+
+
+            // Skapa en variabel som håller en sträng
+            let name = 'christian';
+            // Skriva ut resultatet
+            console.log(reverseString(name));
+
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
