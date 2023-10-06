@@ -1,0 +1,27 @@
+<html>
+    <head><title>clock</title>
+
+        <script>
+            function updateClock() {
+            const today = new Date();
+            let timmar = today.getHours();
+            let minuter = today.getMinutes();
+            let sekunder = today.getSeconds();
+           
+
+            var tid = timmar + ":" + minuter + ":" + sekunder;
+            document.getElementById("clock").innerHTML = tid;
+
+
+            
+            }
+            setInterval(updateClock, 1000);
+
+        updateClock();
+        </script>
+    </head>
+    <body>
+        <div id="clock"></div>
+    
+    </body>
+</html>
