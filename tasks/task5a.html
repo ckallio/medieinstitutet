@@ -14,29 +14,21 @@ Hint: Använd document.querySelector, Element.style och oncl
 
 <html>
 <head>
-    <script>
-        function clickFunction() {
-            let ourText = document.querySelector("p");
-            let ourDiv = document.querySelector("#color-changer");
+    <link rel="stylesheet" href="../style.css">
 
-            // Ändra bakrundsfärgen på ourDiv till grön
-            ourDiv.style.backgroundColor = "green";
+    <script src="../main.js"></script>
+    
 
-            // ändra text på ourText till "Jag har ändrats"
-            ourText.innerText = "Jag har ändrats";
-        }
-    </script>
-    <style>
-        div {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-        }
-    </style>
+ 
 </head>
 <body>
-    <p>Här är en text!</p>
-    <button onclick="clickFunction()">Klick här</button>
-    <div id="color-changer"></div>
+    <button onclick="myFunc1()">
+        Klicka här för röd bakgrund
+        <button onclick="myFunc2()">
+        Klicka här för gå tillbaka
+    </button>
+
+
+
 </body>
 </html>
