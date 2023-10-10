@@ -1,0 +1,54 @@
+<!--Bygg en webbsida med 3 knappar - 
+En för att dölja en bild, 
+en för att 
+visa bilden och en för att ändra 
+bildens bredd. -->
+
+
+<html>
+    <head>
+        <title>image website</title>
+        <script>
+        window.addEventListener("load", (event) => {
+            // Skapa en variabel för varje button
+            const hideButton = document.getElementById("hideButton");
+            const showbutton = document.getElementById("showButton");
+            const widthButton = document.getElementById("widthButton");
+            // En funktion för att visa bilden
+            function showImage(){
+                const kitten = document.querySelector("img");
+                // Visa bilden;
+                kitten.style.display = "block";
+            }
+            // en Funktion för att dölja bilden
+            function hideImage(){
+                const kitten = document.querySelector("img");
+                // Visa bilden;
+                kitten.style.display = "none";
+            }
+            // en funktion för att ändra bildens bredd
+            function changeWidthImage(){
+                const kitten = document.querySelector("img");
+                // bilden width
+                kitten.width = 350;
+            }
+
+            // Koppla en eventListener till varje button
+            showbutton.addEventListener("click",showImage);
+            hideButton.addEventListener("click",hideImage);
+            widthButton.addEventListener("click",changeWidthImage);
+        });
+        </script>
+    </head>
+    <body>
+       <button id="hideButton">Dölja </button>
+       <button id="showButton">Visa </button>
+       <button id="widthButton">ändra bildens bredd </button>
+      
+       <img src="https://placekitten.com/500/800" width="250px">
+       <img src="https://www.google.se/url?sa=i&url=https%3A%2F%2Fboende.stockholm%2Fregler-tillstand%2Fhusdjur%2F&psig=AOvVaw09S4uunI9cHi-ZSE0azuv3&ust=1697015043042000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDJlOeP64EDFQAAAAAdAAAAABAE">
+       
+       
+
+    </body>
+</html>
