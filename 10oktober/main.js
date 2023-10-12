@@ -49,23 +49,62 @@
                 alt:"en liten fågel",
                 getSrc: function(){
                     return this.src;
-                }
+                },
+
+                headlineText: "Liten jävla fågel",
+                descriptionText: "Här sitter en liten jävvvla fågel",
+                button: {
+                    backgroundColor: "orange"
+                },
+                container:{
+                    border: "3px dotted black"
+                },
+                getSrcAsBackground: function(){
+                    return "url(" + this.src + ")";
+                } 
             },
+               
             {
                 src:"räv.jpg",
                 alt:"en liten farlig räv",
                 getSrc: function(){
                     return this.src;
-                }
+                },
+                headlineText: "En liten hund??",
+                descriptionText: "Är det en hund eller räv?",
+                button: {
+                    backgroundColor: "blue"
+                },
+                    container:{
+                        border: "3px dotted black"
+                    },
+                    getSrcAsBackground: function(){
+                        return "url(" + this.src + ")";
+                    } 
+
             },
+
             {
                 src:"fågelnäsa.jpg",
                 alt:"fågel med stor näsa",
                 getSrc: function(){
                     return this.src;
-                }
+                },
+                headlineText: "FÅGEL MED STOR NÄSA",
+                descriptionText: "dammsugare??",
+                button: {
+                    backgroundColor: "yellow"
             },
+            
+                container:{
+                    border: "5px dotted blue"
+                },
+                getSrcAsBackground: function(){
+                    return "url(" + this.src + ")";
+                }            },
         ];
+
+        
 
         const getRandomInt = function (max) {
             // Tar ett slumpmässigt tal mellan 0 och 1, gångrar med max
@@ -78,10 +117,29 @@
         kitten.src = choosenImage.getSrc();
         kitten.alt = choosenImage.alt;
 
+        const headline = document.getElementById("headline");
+        const description = document.getElementById("description");
+        headline.innerText = choosenImage.headlineText;
+        description.innerText = choosenImage.descriptionText;
         
-        console.log(this);
-
+        const allButtons = document.querySelectorAll("button");
+        allButtons.forEach(function(button) {
+            button.style.backgroundColor = choosenImage.button.backgroundColor;
+        });
+        document.querySelector("div").style.border = choosenImage.container.border;
+        const bodyElement = document.querySelector("body");
+        bodyElement.style.backgroundImage = choosenImage.getSrcAsBackground();
+        
+        bodyElement.style.backgroundSize = "100%";
     }
+    const timer = setInterval(showHideImage, 1000);
+    function stopTimer(){
+        clearInterval(timer);
+    }
+    document.querySelector("#headline").addEventListener("click",stopTimer)
+        
+
+
     hideButton.addEventListener("click",showHideImage);
 
     widthButton.addEventListener("click",changeWidthImage);
